@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EL-MATH RelasiCheck — Sifat Refleksif</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-orbs">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="header-badge">Matematika Diskrit · Relasi &amp; Fungsi</div>
+    <h1 class="site-title"><span class="title-accent">EL-MATH </span>RelasiCheck</h1>
+    <p class="site-subtitle">Pemeriksa Sifat Refleksif pada Relasi Himpunan</p>
+    <div class="header-formula">∀a ∈ A &nbsp;→&nbsp; (a, a) ∈ R</div>
+    <a class="hero-cta" href="#checker">
+      Coba Checker &nbsp;↓
+    </a>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════
+       MATERI
+  ════════════════════════════════════════ -->
+  <section class="materi-section" id="materi">
+    <div class="materi-inner">
+
+      <!-- ── Divider ── -->
+      <div class="section-divider">
+        <span>MATERI</span>
+      </div>
+
+      <!-- ── Pengertian ── -->
+      <div class="materi-block" id="pengertian">
+        <div class="materi-num"></div>
+        <div class="materi-content">
+          <h2 class="materi-title">Pengertian Sifat Refleksif</h2>
+          <p class="materi-body">
+            Dalam matematika diskrit, sebuah <strong>relasi R</strong> pada himpunan <strong>A</strong>
+            dikatakan bersifat <em>refleksif</em> apabila setiap elemen di dalam himpunan A
+            berpasangan dengan dirinya sendiri di dalam R.
+          </p>
+          <div class="def-box">
+            <div class="def-label">Definisi Formal</div>
+            <div class="def-formula">R refleksif &nbsp;⟺&nbsp; ∀a ∈ A, (a, a) ∈ R</div>
+            <p class="def-note">
+              Dibaca: "Untuk setiap elemen <em>a</em> yang merupakan anggota himpunan A,
+              pasangan terurut (a, a) harus menjadi anggota relasi R."
+            </p>
+          </div>
+          <div class="materi-cols">
+            <div class="materi-col-card">
+              <div class="col-card-title">Matriks Relasi</div>
+              <p class="col-card-body">Semua elemen pada diagonal utama harus bernilai 1.</p>
+            </div>
+            <div class="materi-col-card">
+              <div class="col-card-title">Graf Relasi</div>
+              <p class="col-card-body">Setiap simpul (node) harus memiliki gelang (loop) ke dirinya sendiri.</p>
+            </div>
+            <div class="materi-col-card">
+              <div class="col-card-title">Syarat Cek</div>
+              <p class="col-card-body">Jika <strong>satu saja</strong> pasangan (a,a) tidak ada, relasi langsung tidak refleksif.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Divider ── -->
+      <div class="section-divider">
+        <span>Contoh &amp; Pembahasan</span>
+      </div>
+
+      <!-- ══════════════════════════════════
+           CONTOH 1 — Refleksif
+      ═══════════════════════════════════ -->
+      <div class="example-block" id="contoh1">
+        <div class="ex-header">
+          <div class="ex-num">Contoh 1</div>
+          <div class="ex-verdict ok">✓ Refleksif</div>
+        </div>
+
+        <div class="ex-given">
+          <div class="ex-given-item">
+            <span class="ex-given-label">Himpunan A</span>
+            <span class="ex-given-val">A = {1, 2, 3}</span>
+          </div>
+          <div class="ex-given-item">
+            <span class="ex-given-label">Relasi R</span>
+            <span class="ex-given-val">R = {(1,1), (2,2), (3,3), (1,2), (2,3)}</span>
+          </div>
+        </div>
+
+        <h4 class="ex-section-title">Langkah Penyelesaian :</h4>
+        <div class="ex-steps">
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Identifikasi elemen A:</strong> a₁ = 1, a₂ = 2, a₃ = 3
+            </div>
+          </div>
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Tentukan pasangan diagonal yang harus ada:</strong>
+              <div class="inline-tag-row">
+                <span class="itag need">(1,1)</span>
+                <span class="itag need">(2,2)</span>
+                <span class="itag need">(3,3)</span>
+              </div>
+            </div>
+          </div>
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Cek satu per satu di dalam R:</strong>
+              <div class="check-grid">
+                <div class="cg-row ok"><span class="cg-pair">(1,1)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+                <div class="cg-row ok"><span class="cg-pair">(2,2)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+                <div class="cg-row ok"><span class="cg-pair">(3,3)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ex-matrix-graph-wrap">
+          <div class="ex-visual-col">
+            <div class="ex-visual-label">Matriks Relasi M<sub>R</sub></div>
+            <table class="ex-matrix">
+              <thead><tr><th></th><th>1</th><th>2</th><th>3</th></tr></thead>
+              <tbody>
+                <tr><th>1</th><td class="cd1">1</td><td class="c1">1</td><td class="c0">0</td></tr>
+                <tr><th>2</th><td class="c0">0</td><td class="cd1">1</td><td class="c1">1</td></tr>
+                <tr><th>3</th><td class="c0">0</td><td class="c0">0</td><td class="cd1">1</td></tr>
+              </tbody>
+            </table>
+            <p class="ex-matrix-note">Diagonal utama semua <strong class="teal">1</strong> → Refleksif ✓</p>
+          </div>
+          <div class="ex-visual-col">
+            <div class="ex-visual-label">Visualisasi Graf</div>
+            <canvas class="ex-canvas" id="cv1" width="300" height="300"></canvas>
+          </div>
+        </div>
+
+        <div class="ex-conclusion ok">
+          <strong>Kesimpulan:</strong> R bersifat <em>refleksif</em> karena semua pasangan
+          (1,1), (2,2), dan (3,3) terdapat dalam R. Syarat ∀a ∈ A, (a,a) ∈ R terpenuhi.
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════
+           CONTOH 2 — TIDAK Refleksif
+      ═══════════════════════════════════ -->
+      <div class="example-block" id="contoh2">
+        <div class="ex-header">
+          <div class="ex-num">Contoh 2</div>
+          <div class="ex-verdict bad">✗ Tidak Refleksif</div>
+        </div>
+
+        <div class="ex-given">
+          <div class="ex-given-item">
+            <span class="ex-given-label">Himpunan A</span>
+            <span class="ex-given-val">A = {1, 2, 3}</span>
+          </div>
+          <div class="ex-given-item">
+            <span class="ex-given-label">Relasi R</span>
+            <span class="ex-given-val">R = {(1,1), (2,2), (1,3), (2,3)}</span>
+          </div>
+        </div>
+
+        <h4 class="ex-section-title">Langkah Penyelesaian :</h4>
+        <div class="ex-steps">
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Identifikasi elemen A:</strong> a₁ = 1, a₂ = 2, a₃ = 3
+            </div>
+          </div>
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Tentukan pasangan diagonal yang harus ada:</strong>
+              <div class="inline-tag-row">
+                <span class="itag need">(1,1)</span>
+                <span class="itag need">(2,2)</span>
+                <span class="itag need">(3,3)</span>
+              </div>
+            </div>
+          </div>
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Cek satu per satu di dalam R:</strong>
+              <div class="check-grid">
+                <div class="cg-row ok"><span class="cg-pair">(1,1)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+                <div class="cg-row ok"><span class="cg-pair">(2,2)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+                <div class="cg-row bad"><span class="cg-pair">(3,3)</span><span class="cg-sym">∉ R</span><span class="cg-res bad">✗ Tidak Ada</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ex-matrix-graph-wrap">
+          <div class="ex-visual-col">
+            <div class="ex-visual-label">Matriks Relasi M<sub>R</sub></div>
+            <table class="ex-matrix">
+              <thead><tr><th></th><th>1</th><th>2</th><th>3</th></tr></thead>
+              <tbody>
+                <tr><th>1</th><td class="cd1">1</td><td class="c0">0</td><td class="c1">1</td></tr>
+                <tr><th>2</th><td class="c0">0</td><td class="cd1">1</td><td class="c1">1</td></tr>
+                <tr><th>3</th><td class="c0">0</td><td class="c0">0</td><td class="cd0">0</td></tr>
+              </tbody>
+            </table>
+            <p class="ex-matrix-note">Diagonal [3,3] = <strong class="red">0</strong> → Tidak Refleksif ✗</p>
+          </div>
+          <div class="ex-visual-col">
+            <div class="ex-visual-label">Visualisasi Graf</div>
+            <canvas class="ex-canvas" id="cv2" width="300" height="300"></canvas>
+          </div>
+        </div>
+
+        <div class="ex-conclusion bad">
+          <strong>Kesimpulan:</strong> R <em>tidak bersifat refleksif</em> karena (3,3) ∉ R.
+          Elemen 3 ∈ A tidak berpasangan dengan dirinya sendiri dalam R.
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════
+           CONTOH 3 — Elemen Huruf, Refleksif
+      ═══════════════════════════════════ -->
+      <div class="example-block" id="contoh3">
+        <div class="ex-header">
+          <div class="ex-num">Contoh 3</div>
+          <div class="ex-verdict ok">✓ Refleksif (Elemen Huruf)</div>
+        </div>
+
+        <div class="ex-given">
+          <div class="ex-given-item">
+            <span class="ex-given-label">Himpunan A</span>
+            <span class="ex-given-val">A = {a, b, c, d}</span>
+          </div>
+          <div class="ex-given-item">
+            <span class="ex-given-label">Relasi R</span>
+            <span class="ex-given-val">R = {(a,a), (b,b), (c,c), (d,d), (a,b), (c,d)}</span>
+          </div>
+        </div>
+
+        <h4 class="ex-section-title">Langkah Penyelesaian :</h4>
+        <div class="ex-steps">
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Identifikasi elemen A:</strong> a₁ = a, a₂ = b, a₃ = c, a₄ = d
+            </div>
+          </div>
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Tentukan pasangan diagonal yang harus ada:</strong>
+              <div class="inline-tag-row">
+                <span class="itag need">(a,a)</span>
+                <span class="itag need">(b,b)</span>
+                <span class="itag need">(c,c)</span>
+                <span class="itag need">(d,d)</span>
+              </div>
+            </div>
+          </div>
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Cek satu per satu di dalam R:</strong>
+              <div class="check-grid">
+                <div class="cg-row ok"><span class="cg-pair">(a,a)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+                <div class="cg-row ok"><span class="cg-pair">(b,b)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+                <div class="cg-row ok"><span class="cg-pair">(c,c)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+                <div class="cg-row ok"><span class="cg-pair">(d,d)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ex-matrix-graph-wrap">
+          <div class="ex-visual-col">
+            <div class="ex-visual-label">Matriks Relasi M<sub>R</sub></div>
+            <table class="ex-matrix">
+              <thead><tr><th></th><th>a</th><th>b</th><th>c</th><th>d</th></tr></thead>
+              <tbody>
+                <tr><th>a</th><td class="cd1">1</td><td class="c1">1</td><td class="c0">0</td><td class="c0">0</td></tr>
+                <tr><th>b</th><td class="c0">0</td><td class="cd1">1</td><td class="c0">0</td><td class="c0">0</td></tr>
+                <tr><th>c</th><td class="c0">0</td><td class="c0">0</td><td class="cd1">1</td><td class="c1">1</td></tr>
+                <tr><th>d</th><td class="c0">0</td><td class="c0">0</td><td class="c0">0</td><td class="cd1">1</td></tr>
+              </tbody>
+            </table>
+            <p class="ex-matrix-note">Diagonal utama semua <strong class="teal">1</strong> → Refleksif ✓</p>
+          </div>
+          <div class="ex-visual-col">
+            <div class="ex-visual-label">Visualisasi Graf</div>
+            <canvas class="ex-canvas" id="cv3" width="300" height="300"></canvas>
+          </div>
+        </div>
+
+        <div class="ex-conclusion ok">
+          <strong>Kesimpulan:</strong> R bersifat <em>refleksif</em>. Meski elemen berupa huruf,
+          konsep tetap sama — setiap elemen (a, b, c, d) memiliki pasangan diagonal di R.
+          Elemen tambahan (a,b) dan (c,d) tidak mengganggu sifat refleksif.
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════
+           CONTOH 4 — Tidak Refleksif (Himpunan Besar)
+      ═══════════════════════════════════ -->
+      <div class="example-block" id="contoh4">
+        <div class="ex-header">
+          <div class="ex-num">Contoh 4</div>
+          <div class="ex-verdict bad">✗ Tidak Refleksif</div>
+        </div>
+
+        <div class="ex-given">
+          <div class="ex-given-item">
+            <span class="ex-given-label">Himpunan A</span>
+            <span class="ex-given-val">A = {1, 2, 3, 4}</span>
+          </div>
+          <div class="ex-given-item">
+            <span class="ex-given-label">Relasi R</span>
+            <span class="ex-given-val">R = {(1,1), (2,2), (3,3), (1,2), (3,4)}</span>
+          </div>
+        </div>
+
+        <h4 class="ex-section-title">Langkah Penyelesaian :</h4>
+        <div class="ex-steps">
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Identifikasi elemen A:</strong> a₁ = 1, a₂ = 2, a₃ = 3, a₄ = 4
+            </div>
+          </div>
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Tentukan pasangan diagonal yang harus ada:</strong>
+              <div class="inline-tag-row">
+                <span class="itag need">(1,1)</span>
+                <span class="itag need">(2,2)</span>
+                <span class="itag need">(3,3)</span>
+                <span class="itag need">(4,4)</span>
+              </div>
+            </div>
+          </div>
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Cek satu per satu di dalam R:</strong>
+              <div class="check-grid">
+                <div class="cg-row ok"><span class="cg-pair">(1,1)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+                <div class="cg-row ok"><span class="cg-pair">(2,2)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+                <div class="cg-row ok"><span class="cg-pair">(3,3)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+                <div class="cg-row bad"><span class="cg-pair">(4,4)</span><span class="cg-sym">∉ R</span><span class="cg-res bad">✗ Tidak Ada</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ex-matrix-graph-wrap">
+          <div class="ex-visual-col">
+            <div class="ex-visual-label">Matriks Relasi M<sub>R</sub></div>
+            <table class="ex-matrix">
+              <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
+              <tbody>
+                <tr><th>1</th><td class="cd1">1</td><td class="c1">1</td><td class="c0">0</td><td class="c0">0</td></tr>
+                <tr><th>2</th><td class="c0">0</td><td class="cd1">1</td><td class="c0">0</td><td class="c0">0</td></tr>
+                <tr><th>3</th><td class="c0">0</td><td class="c0">0</td><td class="cd1">1</td><td class="c1">1</td></tr>
+                <tr><th>4</th><td class="c0">0</td><td class="c0">0</td><td class="c0">0</td><td class="cd0">0</td></tr>
+              </tbody>
+            </table>
+            <p class="ex-matrix-note">M[4][4] = <strong class="red">0</strong> → Tidak Refleksif ✗</p>
+          </div>
+          <div class="ex-visual-col">
+            <div class="ex-visual-label">Visualisasi Graf</div>
+            <canvas class="ex-canvas" id="cv4" width="300" height="300"></canvas>
+          </div>
+        </div>
+
+        <div class="ex-conclusion bad">
+          <strong>Kesimpulan:</strong> R <em>tidak bersifat refleksif</em> karena (4,4) ∉ R.
+          Meskipun tiga elemen lainnya sudah memiliki pasangan diagonal, elemen 4 ∈ A
+          tidak berpasangan dengan dirinya sendiri sehingga syarat gagal.
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════
+           CONTOH 5 — Refleksif (Himpunan Penuh Tanpa Pasangan Lain)
+      ═══════════════════════════════════ -->
+      <div class="example-block" id="contoh5">
+        <div class="ex-header">
+          <div class="ex-num">Contoh 5</div>
+          <div class="ex-verdict ok">✓ Refleksif (Minimal)</div>
+        </div>
+
+        <div class="ex-given">
+          <div class="ex-given-item">
+            <span class="ex-given-label">Himpunan A</span>
+            <span class="ex-given-val">A = {x, y, z}</span>
+          </div>
+          <div class="ex-given-item">
+            <span class="ex-given-label">Relasi R</span>
+            <span class="ex-given-val">R = {(x,x), (y,y), (z,z)}</span>
+          </div>
+        </div>
+
+        <h4 class="ex-section-title">Langkah Penyelesaian :</h4>
+        <div class="ex-steps">
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Identifikasi elemen A:</strong> a₁ = x, a₂ = y, a₃ = z
+            </div>
+          </div>
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Tentukan pasangan diagonal yang harus ada:</strong>
+              <div class="inline-tag-row">
+                <span class="itag need">(x,x)</span>
+                <span class="itag need">(y,y)</span>
+                <span class="itag need">(z,z)</span>
+              </div>
+            </div>
+          </div>
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Cek satu per satu di dalam R:</strong>
+              <div class="check-grid">
+                <div class="cg-row ok"><span class="cg-pair">(x,x)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+                <div class="cg-row ok"><span class="cg-pair">(y,y)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+                <div class="cg-row ok"><span class="cg-pair">(z,z)</span><span class="cg-sym">∈ R</span><span class="cg-res ok">✓ Ada</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="ex-step">
+            <div class="ex-step-dot"></div>
+            <div>
+              <strong>Catatan penting:</strong> Relasi ini hanya berisi pasangan diagonal saja — tidak ada pasangan lain seperti (x,y) atau (y,z). Ini adalah bentuk <em>relasi refleksif minimal</em>, dan tetap sah sebagai relasi refleksif.
+            </div>
+          </div>
+        </div>
+
+        <div class="ex-matrix-graph-wrap">
+          <div class="ex-visual-col">
+            <div class="ex-visual-label">Matriks Relasi M<sub>R</sub></div>
+            <table class="ex-matrix">
+              <thead><tr><th></th><th>x</th><th>y</th><th>z</th></tr></thead>
+              <tbody>
+                <tr><th>x</th><td class="cd1">1</td><td class="c0">0</td><td class="c0">0</td></tr>
+                <tr><th>y</th><td class="c0">0</td><td class="cd1">1</td><td class="c0">0</td></tr>
+                <tr><th>z</th><td class="c0">0</td><td class="c0">0</td><td class="cd1">1</td></tr>
+              </tbody>
+            </table>
+            <p class="ex-matrix-note">Diagonal utama semua <strong class="teal">1</strong>, selebihnya <strong>0</strong> → Refleksif Minimal ✓</p>
+          </div>
+          <div class="ex-visual-col">
+            <div class="ex-visual-label">Visualisasi Graf</div>
+            <canvas class="ex-canvas" id="cv5" width="300" height="300"></canvas>
+          </div>
+        </div>
+
+        <div class="ex-conclusion ok">
+          <strong>Kesimpulan:</strong> R bersifat <em>refleksif</em>. Ini adalah contoh
+          <em>relasi refleksif minimal</em> — hanya berisi tepat pasangan (a,a) untuk
+          setiap a ∈ A, tanpa pasangan tambahan lainnya. Syarat ∀a ∈ A, (a,a) ∈ R tetap terpenuhi.
+        </div>
+      </div>
+
+      <!-- ── CTA ke Checker ── -->
+      <div class="cta-divider">
+        <p class="cta-divider-text">Paham gak bro konsepnya? Sekarang coba sendiri biar jago!</p>
+      </div>
+
+    </div><!-- /materi-inner -->
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CHECKER
+  ════════════════════════════════════════ -->
+  <section class="checker-section" id="checker">
+    <div class="checker-inner">
+
+      <div class="checker-heading">
+        <div class="checker-tag">EL-MATH</div>
+        <h2 class="checker-title">Refleksif Checker</h2>
+        <p class="checker-sub">Masukkan himpunan dan relasi kamu, program akan memeriksa sifat refleksif secara otomatis.</p>
+      </div>
+
+      <div class="main-wrap">
+
+        <section class="panel panel-input" id="inputPanel">
+          <div class="panel-label">Input Data</div>
+
+          <div class="field-group">
+            <label class="field-label" for="setInput">
+              Himpunan A
+              <span class="field-hint">pisahkan elemen dengan koma</span>
+            </label>
+            <div class="input-row">
+              <span class="input-brace">{</span>
+              <input type="text" id="setInput" class="field-input"
+                placeholder="1, 2, 3" autocomplete="off" spellcheck="false" />
+              <span class="input-brace">}</span>
+            </div>
+            <p class="field-error" id="setError"></p>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="relationInput">
+              Relasi R
+              <span class="field-hint">pasangan dalam kurung, pisahkan dengan koma</span>
+            </label>
+            <div class="input-row">
+              <span class="input-brace">{</span>
+              <input type="text" id="relationInput" class="field-input"
+                placeholder="(1,1), (2,2), (3,3), (1,2)"
+                autocomplete="off" spellcheck="false" />
+              <span class="input-brace">}</span>
+            </div>
+            <p class="field-error" id="relationError"></p>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" id="checkBtn" onclick="checkReflexive()">
+              <span class="btn-icon">⚡</span> Periksa Refleksif
+            </button>
+            <button class="btn btn-ghost" id="resetBtn" onclick="resetAll()">
+              <span class="btn-icon">↺</span> Reset
+            </button>
+          </div>
+
+          <div class="examples-wrap">
+            <p class="examples-title">Muat Contoh Cepat:</p>
+            <div class="examples-row">
+              <button class="ex-chip" onclick="loadExample(1)">Refleksif ✓</button>
+              <button class="ex-chip" onclick="loadExample(2)">Tidak Refleksif ✗</button>
+              <button class="ex-chip" onclick="loadExample(3)">Huruf</button>
+              <button class="ex-chip" onclick="loadExample(4)">Besar</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="result-area" id="resultArea" aria-live="polite"></section>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span>RelasiCheck · Matematika Diskrit</span>
+    <span>Sifat Refleksif pada Relasi &amp; Fungsi</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
