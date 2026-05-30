@@ -391,9 +391,10 @@ function renderGraph(setElems, pairs, { pairSet }) {
     // Panah
     drawArrow(ctx, mx + dx * curve, my + dy * curve, pb.x, pb.y, nodeR, colors.edgeLine);
   });
-
+  
   ctx.setLineDash([]);
-
+  
+  
   // ── Gambar loop ──
   setElems.forEach((elem, i) => {
     const hasLoop = pairSet.has(`${elem}__${elem}`);
@@ -409,9 +410,31 @@ function renderGraph(setElems, pairs, { pairSet }) {
     ctx.arc(lx, ly, loopR, 0, 2 * Math.PI);
     ctx.strokeStyle = loopColor;
     ctx.lineWidth = hasLoop ? 2.5 : 2;
-    if (!hasLoop) ctx.setLineDash([3, 3]);
+
+    // loop hijau dan merah sama-sama putus-putus
+    ctx.setLineDash([4, 5]);
     ctx.stroke();
     ctx.setLineDash([]);
+
+
+    // Kepala panah loop
+const toNodeAngle = angle + Math.PI;
+
+const tipX = lx + Math.cos(toNodeAngle) * loopR;
+const tipY = ly + Math.sin(toNodeAngle) * loopR;
+
+const arrowAngle = hasLoop
+  ? toNodeAngle - Math.PI / 2.7
+  : toNodeAngle + Math.PI / 2;
+
+drawLoopArrow(
+  ctx,
+  tipX,
+  tipY,
+  arrowAngle,
+  loopColor,
+  16
+);
 
     // Glow effect untuk loop yang ada
     if (hasLoop) {
@@ -463,6 +486,37 @@ function drawArrow(ctx, fromX, fromY, toX, toY, nodeR, color) {
   ctx.closePath();
   ctx.fillStyle = color;
   ctx.fill();
+}
+
+function drawLoopArrow(
+  ctx,
+  tipX,
+  tipY,
+  angle,
+  color,
+  size
+) {
+  ctx.save();
+
+  ctx.fillStyle = color;
+
+  ctx.beginPath();
+  ctx.moveTo(tipX, tipY);
+
+  ctx.lineTo(
+    tipX - size * Math.cos(angle - 0.38),
+    tipY - size * Math.sin(angle - 0.38)
+  );
+
+  ctx.lineTo(
+    tipX - size * Math.cos(angle + 0.38),
+    tipY - size * Math.sin(angle + 0.38)
+  );
+
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.restore();
 }
 
 // ─── MAIN CHECK ──────────────────────────────────────────────────────────────
